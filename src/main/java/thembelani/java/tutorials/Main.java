@@ -23,7 +23,7 @@ public class Main {
 
         myLinkedList.printList();
 
-        myLinkedList.removeLast();
+        myLinkedList.prepend(50);
 
         myLinkedList.printList();
         myLinkedList.getLength();
