@@ -26,6 +26,7 @@ public class Main {
         myLinkedList.removeLast();
 
         myLinkedList.printList();
+        myLinkedList.getLength();
 
     }
 }
