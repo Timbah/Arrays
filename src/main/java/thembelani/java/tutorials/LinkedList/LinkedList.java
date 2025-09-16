@@ -50,6 +50,24 @@ public class LinkedList {
 
     }
 
+    public void removeFirst() {
+
+        if (length == 1 || length == 0) {
+
+            this.head = null;
+            this.tail = null;
+
+        } else {
+
+            Node temp = this.head.next;
+            this.head.next = null;
+            this.head = temp;
+
+        }
+
+        length--;
+    }
+
     public void removeLast() {
 
         Node temp = head;

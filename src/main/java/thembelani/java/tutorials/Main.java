@@ -24,7 +24,8 @@ public class Main {
         myLinkedList.printList();
 
         myLinkedList.prepend(50);
-
+        myLinkedList.printList();
+        myLinkedList.removeFirst();
         myLinkedList.printList();
         myLinkedList.getLength();
 
