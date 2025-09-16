@@ -43,17 +43,13 @@ public class LinkedList {
             temp = temp.next;
         }
 
-        if (temp.next == null) {
-            tail = prev;
-            tail.next = null;
-            length--;
-        }
+        tail = prev;
+        tail.next = null;
+        length--;
 
-        if (length == 1 || length == 0) {
-
+        if (length == 0) {
             head = null;
             tail = null;
-            length--;
         }
 
     }
