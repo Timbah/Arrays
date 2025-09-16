@@ -14,15 +14,61 @@ public class LinkedList {
         this.length = 1;
     }
 
+    public void append(int value) {
+
+        Node newNode = new Node(value);
+
+        if (this.head == null && this.tail == null) {
+
+            this.head = newNode;
+            this.tail = newNode;
+            this.length = 1;
+
+        } else {
+
+            this.tail.next = newNode;
+            this.tail = newNode;
+            this.length++;
+        }
+
+    }
+
+    public void removeLast() {
+
+        Node current = head;
+        Node temp = current;
+
+        while (current.next != null) {
+            temp = current;
+            current = current.next;
+        }
+
+        if (current.next == null) {
+            tail = temp;
+            tail.next = null;
+
+        }
+
+        if (length == 1) {
+
+            head = null;
+            tail = null;
+        }
+
+    }
+
     public void printList() {
 
         Node temp = this.head;
+        StringBuilder myList = new StringBuilder();
 
         while (temp != null) {
 
-            System.out.println(temp.value);
+            myList.append("-->").append(temp.value);
             temp = temp.next;
         }
+
+        System.out.println(myList);
     }
 
     public void getHead() {
