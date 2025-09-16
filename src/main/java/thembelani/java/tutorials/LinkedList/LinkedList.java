@@ -35,24 +35,25 @@ public class LinkedList {
 
     public void removeLast() {
 
-        Node current = head;
-        Node temp = current;
+        Node temp = head;
+        Node prev = temp;
 
-        while (current.next != null) {
-            temp = current;
-            current = current.next;
+        while (temp.next != null) {
+            prev = temp;
+            temp = temp.next;
         }
 
-        if (current.next == null) {
-            tail = temp;
+        if (temp.next == null) {
+            tail = prev;
             tail.next = null;
-
+            length--;
         }
 
-        if (length == 1) {
+        if (length == 1 || length == 0) {
 
             head = null;
             tail = null;
+            length--;
         }
 
     }
