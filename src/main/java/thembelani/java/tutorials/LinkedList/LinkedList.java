@@ -14,6 +14,59 @@ public class LinkedList {
         this.length = 1;
     }
 
+    public void removeDuplicates() {
+        Node current = this.head;
+
+        while (current != null) {
+            Node runner = current;
+            while (runner.next != null) {
+                if (runner.next.value == current.value) {
+                    runner.next = runner.next.next;
+                    length -= 1;
+                } else {
+                    runner = runner.next;
+                }
+
+            }
+            current = current.next;
+        }
+
+    }
+
+
+    public Node kthNode(int k) {
+
+        if (k < 0 || k > length) {
+            return null;
+        }
+
+        Node fast = this.head;
+        Node slow = this.head;
+
+        int counter = 1;
+
+        if (fast == null || fast.next == null) {
+            return fast;
+        }
+
+        while (fast.next != null) {
+            fast = fast.next.next;
+            counter += 2;
+        }
+
+        if (k == counter) {
+            return slow;
+        }
+
+        while (counter != k) {
+            slow = slow.next;
+            counter -= 1;
+        }
+
+        return slow;
+
+    }
+
     public Node findMiddleNode() {
 
         if (length == 0) return null;
