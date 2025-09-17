@@ -1,6 +1,7 @@
 package thembelani.java.tutorials;
 
 import thembelani.java.tutorials.LinkedList.LinkedList;
+import thembelani.java.tutorials.LinkedList.Node;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -28,6 +29,9 @@ public class Main {
         myLinkedList.removeFirst();
         myLinkedList.printList();
         myLinkedList.getLength();
+
+        Node temp  = myLinkedList.get(5);
+        System.out.println(temp.toString());
 
     }
 }

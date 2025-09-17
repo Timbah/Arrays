@@ -14,6 +14,24 @@ public class LinkedList {
         this.length = 1;
     }
 
+    public Node get(int index) {
+
+        if (index < this.length || index > this.length) {
+            return null;
+        }
+
+        Node temp = this.head;
+
+        for (int i = 0; i < index; i++) {
+
+            if (temp.next != null) {
+                temp = temp.next;
+            }
+        }
+
+        return temp;
+    }
+
     public void append(int value) {
 
         Node newNode = new Node(value);
@@ -53,12 +71,10 @@ public class LinkedList {
     public void removeFirst() {
 
         if (length == 1 || length == 0) {
-
             this.head = null;
             this.tail = null;
 
         } else {
-
             Node temp = this.head.next;
             this.head.next = null;
             this.head = temp;
@@ -95,7 +111,6 @@ public class LinkedList {
         StringBuilder myList = new StringBuilder();
 
         while (temp != null) {
-
             myList.append("-->").append(temp.value);
             temp = temp.next;
         }
@@ -104,17 +119,16 @@ public class LinkedList {
     }
 
     public void getHead() {
-
         System.out.println("Head: " + this.head.value);
     }
 
     public void getTail() {
-
         System.out.println("Tail: " + this.tail.value);
     }
 
     public void getLength() {
-
         System.out.println("Length: " + this.length);
     }
+
+
 }
