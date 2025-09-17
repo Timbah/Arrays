@@ -14,6 +14,49 @@ public class LinkedList {
         this.length = 1;
     }
 
+    public Node findMiddleNode() {
+
+        if (length == 0) return null;
+        if (length == 1) return this.head;
+
+        Node fast = head;
+        Node slow = head;
+        int index = 0;
+
+        while (fast.next != null && get(index + 2) != null) {
+            fast = get(index + 2);
+            slow = slow.next;
+        }
+
+        return slow;
+
+    }
+
+    public boolean hasLoop() {
+
+        if (length == 0) {
+            return false;
+        }
+
+        Node fast = this.head;
+        Node slow = this.head;
+
+        while (fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast) {
+                return true;
+            }
+
+            if (fast.next == null || fast.next.next == null) {
+                return false;
+            }
+        }
+
+        return false;
+    }
+
     public boolean set(int index, int value) {
 
         Node temp = get(index);
@@ -49,13 +92,11 @@ public class LinkedList {
         Node newNode = new Node(value);
 
         if (this.head == null && this.tail == null) {
-
             this.head = newNode;
             this.tail = newNode;
             this.length = 1;
 
         } else {
-
             this.tail.next = newNode;
             this.tail = newNode;
             this.length++;
