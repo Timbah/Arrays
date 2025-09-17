@@ -16,28 +16,14 @@ public class LinkedList {
 
     public boolean set(int index, int value) {
 
-        boolean isSet = false;
-        Node temp = this.head;
+        Node temp = get(index);
 
-        if (index < 0|| index > this.length) {
-            return isSet;
+        if (temp != null) {
+            temp.value = value;
+            return true;
         }
 
-        for (int i = 0; i <= index; i++) {
-
-            if (i == index) {
-                temp.value = value;
-                isSet = true;
-                break;
-
-            } else {
-                temp = temp.next;
-
-            }
-        }
-
-        return isSet;
-
+        return false;
     }
 
     public Node get(int index) {
