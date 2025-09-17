@@ -30,8 +30,15 @@ public class Main {
         myLinkedList.printList();
         myLinkedList.getLength();
 
-        Node temp  = myLinkedList.get(5);
+        System.out.println("Before updating value at index 2");
+        Node temp  = myLinkedList.get(2);
         System.out.println(temp.toString());
+
+        boolean isSet = myLinkedList.set(2,100);
+        System.out.println("After updating value at index 2");
+
+        System.out.println(temp.toString());
+        myLinkedList.printList();
 
     }
 }

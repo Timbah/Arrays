@@ -14,9 +14,35 @@ public class LinkedList {
         this.length = 1;
     }
 
+    public boolean set(int index, int value) {
+
+        boolean isSet = false;
+        Node temp = this.head;
+
+        if (index < 0|| index > this.length) {
+            return isSet;
+        }
+
+        for (int i = 0; i <= index; i++) {
+
+            if (i == index) {
+                temp.value = value;
+                isSet = true;
+                break;
+
+            } else {
+                temp = temp.next;
+
+            }
+        }
+
+        return isSet;
+
+    }
+
     public Node get(int index) {
 
-        if (index < this.length || index > this.length) {
+        if (index < 0 || index > this.length) {
             return null;
         }
 
