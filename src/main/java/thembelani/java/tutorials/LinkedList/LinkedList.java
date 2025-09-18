@@ -14,6 +14,26 @@ public class LinkedList {
         this.length = 1;
     }
 
+    public int binaryToDecimal() {
+
+        if (this.head == null) {
+            return 0;
+        }
+
+        if (this.head != null && this.head.next == null) {
+            return this.head.value;
+        }
+        int num = 0;
+        Node temp = this.head;
+
+        while (temp != null) {
+            num = (num * 2) + temp.value;
+            temp = temp.next;
+        }
+
+        return num;
+    }
+
     public void removeDuplicates() {
         Node current = this.head;
 
