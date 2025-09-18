@@ -24,6 +24,20 @@ public class DoublyLinkedList {
         length = 1;
     }
 
+    public boolean set(int index, int value) {
+
+
+        Node temp = get(index);
+
+        if (temp != null) {
+
+            temp.value = value;
+            return true;
+        }
+
+        return false;
+    }
+
     public void prepend(int value) {
 
         Node newNode = new Node(value);
