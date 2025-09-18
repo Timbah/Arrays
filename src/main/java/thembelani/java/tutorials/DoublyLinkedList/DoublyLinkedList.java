@@ -24,6 +24,25 @@ public class DoublyLinkedList {
         length = 1;
     }
 
+    public void prepend(int value) {
+
+        Node newNode = new Node(value);
+
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            head.prev = newNode;
+            newNode.next = head;
+
+            head = newNode;
+
+        }
+
+        length++;
+
+    }
+
     public Node removeLast() {
 
         if (length == 0) {
@@ -31,11 +50,10 @@ public class DoublyLinkedList {
         }
 
         Node temp = this.tail;
-        if(length == 1){
+        if (length == 1) {
             this.head = null;
             this.tail = null;
-        }
-        else {
+        } else {
             this.tail = this.tail.prev;
             this.tail.next = null;
             temp.prev = null;
