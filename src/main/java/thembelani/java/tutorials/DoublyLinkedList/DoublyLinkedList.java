@@ -24,6 +24,34 @@ public class DoublyLinkedList {
         length = 1;
     }
 
+    public boolean isPalindrome() {
+
+        if (length == 1 || length == 0) {
+            return true;
+        }
+
+        if (head.value != tail.value) {
+            return false;
+        }
+
+        boolean isPalindrome = true;
+        int counter = 1;
+        Node forward = head;
+        Node backward = tail;
+
+        while (counter <= length / 2) {
+            if (forward.value != backward.value) {
+                isPalindrome = false;
+                return isPalindrome;
+            }
+            forward = forward.next;
+            backward = backward.prev;
+            counter++;
+        }
+
+        return isPalindrome;
+    }
+
     public Node remove(int index) {
 
         if (index < 0 || index >= length) {
