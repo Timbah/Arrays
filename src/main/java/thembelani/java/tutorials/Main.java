@@ -1,6 +1,6 @@
 package thembelani.java.tutorials;
 
-import thembelani.java.tutorials.DoublyLinkedList.DoublyLinkedList;
+import thembelani.java.tutorials.Stack.Stack;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -39,18 +39,24 @@ public class Main {
 //        System.out.println(temp.toString());
 //        myLinkedList.printList();
 
-        DoublyLinkedList myDLL = new DoublyLinkedList(7);
+//        DoublyLinkedList myDLL = new DoublyLinkedList(7);
+//
+//        myDLL.getHead();
+//        myDLL.getTail();
+//        myDLL.getLength();
+//        myDLL.append(2);
+//        myDLL.printList();
+//        //myDLL.getTail();
+//
+//        System.out.println("Node that has been removed: " + myDLL.removeLast().value);
+//        System.out.println("List after removing last");
+//        myDLL.printList();
 
-        myDLL.getHead();
-        myDLL.getTail();
-        myDLL.getLength();
-        myDLL.append(2);
-        myDLL.printList();
-        //myDLL.getTail();
+        Stack myStack = new Stack(4);
+        myStack.getTop();
+        myStack.getHeight();
 
-        System.out.println("Node that has been removed: " + myDLL.removeLast().value);
-        System.out.println("List after removing last");
-        myDLL.printList();
+        myStack.printStack();
 
     }
 }
