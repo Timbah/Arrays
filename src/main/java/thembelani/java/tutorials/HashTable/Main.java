@@ -3,6 +3,7 @@ package thembelani.java.tutorials.HashTable;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -91,6 +92,29 @@ public class Main {
 
     }
 
+    public static Character firstNonRepeatingChar(String word) {
+        if (word.isEmpty()) {
+            return null;
+        }
+
+        Map<Character, Integer> frequencyMap = new HashMap<>();
+
+        for (char c : word.toCharArray()) {
+            int counter = frequencyMap.containsKey(c) ? frequencyMap.getOrDefault(c, 0) + 1 : 1;
+            frequencyMap.put(c, counter);
+        }
+
+        for (Map.Entry<Character, Integer> entry : frequencyMap.entrySet()) {
+            if (entry.getValue() == 1) {
+                return entry.getKey();
+            }
+        }
+
+        return null;
+
+
+    }
+
     public static List<Integer> findDuplicates(int[] nums) {
         HashMap<Integer, Integer> myHashTable = new HashMap<>();
         List<Integer> duplicatesList = new LinkedList<>();
@@ -99,6 +123,7 @@ public class Main {
         for (int i : nums) {
             if (myHashTable.containsKey(i)) {
                 counter = myHashTable.getOrDefault(i, 0) + 1;
+
                 myHashTable.put(i, counter);
 
                 if (counter > 1 && !duplicatesList.contains(i)) {
