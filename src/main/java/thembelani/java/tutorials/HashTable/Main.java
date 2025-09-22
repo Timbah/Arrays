@@ -1,9 +1,6 @@
 package thembelani.java.tutorials.HashTable;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
 
@@ -90,6 +87,23 @@ public class Main {
         System.out.println("Actual: " + findDuplicates(nums5));
         System.out.println();
 
+    }
+
+    public static List<Integer> getSums(int[] numbers, int target) {
+
+        //numbers [2,5,15,11,7], target = 9
+        List<Integer> sumsList = new ArrayList<>();
+
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[i] + numbers[j] == target) {
+                    sumsList.add(i);
+                    sumsList.add(j);
+                }
+            }
+        }
+
+        return sumsList;
     }
 
     public static Character firstNonRepeatingChar(String word) {
