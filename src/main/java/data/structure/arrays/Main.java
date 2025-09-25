@@ -28,6 +28,13 @@ public class Main {
         System.out.println(Arrays.toString(thirdArray));
         System.out.println(Arrays.toString(fourthArray));
 
+        String[] sArray = {"Able","Thembelani","Junior","Sinethemba","Mark","David"};
+        Arrays.sort(sArray);
+        System.out.println(Arrays.toString(sArray));
+
+        if(Arrays.binarySearch(sArray,"Thembelani") >= 0){
+            System.out.println("Found Thembelani in the list");
+        }
 
     }
 
