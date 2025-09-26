@@ -1,6 +1,5 @@
 package data.structure.arrays;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -45,20 +44,22 @@ public class Main {
 //            System.out.println("Arrays are not equal");
 //        }
 
-        int[] arraySort = getRandomArray(5);
-        System.out.println(Arrays.toString(arraySort));
-        Arrays.sort(arraySort);
-        System.out.println(Arrays.toString(arraySort));
+//        int[] arraySort = getRandomArray(5);
+//        System.out.println(Arrays.toString(arraySort));
+//        Arrays.sort(arraySort);
+//        System.out.println(Arrays.toString(arraySort));
+//
+//        int[] finalArray = new int[arraySort.length];
+//        int temp = arraySort.length -1;
+//
+//        for(int i =0; i < finalArray.length; i++){
+//            finalArray[i] = arraySort[temp];
+//            temp--;
+//        }
+//
+//        System.out.println(Arrays.toString(finalArray));
 
-        int[] finalArray = new int[arraySort.length];
-        int temp = arraySort.length -1;
-
-        for(int i =0; i < finalArray.length; i++){
-            finalArray[i] = arraySort[temp];
-            temp--;
-        }
-
-        System.out.println(Arrays.toString(finalArray));
+         SortedArray.printArray(SortedArray.getIntegers(5));
 
 
     }
