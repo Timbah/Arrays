@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class MinimumElement {
 
-    public int[] readIntegers() {
+    public static int[] readIntegers() {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a comma separated list of integers e.g. 1,3,89,15");
@@ -22,7 +22,7 @@ public class MinimumElement {
         return intArray;
     }
 
-    public int getMin(int[] arrayInput) {
+    public static int findMin(int[] arrayInput) {
 
         Arrays.sort(arrayInput);
 
