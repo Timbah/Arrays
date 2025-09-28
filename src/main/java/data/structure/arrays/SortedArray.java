@@ -36,6 +36,7 @@ public class SortedArray {
         int tail = inputArray.length-1;
         int temp = 0;
 
+        System.out.println("Array = "+Arrays.toString(inputArray));
         for(int i = 0; i < inputArray.length / 2; i++){
             temp = inputArray[i];
             inputArray[i] = inputArray[tail];
@@ -43,6 +44,8 @@ public class SortedArray {
 
             tail--;
         }
+
+        System.out.println("Reversed Array = "+Arrays.toString(inputArray));
 
     }
 
