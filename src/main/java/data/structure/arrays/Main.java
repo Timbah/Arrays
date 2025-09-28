@@ -1,5 +1,6 @@
 package data.structure.arrays;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -59,7 +60,12 @@ public class Main {
 //
 //        System.out.println(Arrays.toString(finalArray));
 
-         SortedArray.printArray(SortedArray.getIntegers(5));
+//         SortedArray.printArray(SortedArray.getIntegers(5));
+
+        int[] testArray = {1,2,3,4,5,6};
+        System.out.println("Array before: "+ Arrays.toString(testArray));
+        SortedArray.reverse(testArray);
+        System.out.println("Array after: "+ Arrays.toString(testArray));
 
 
     }

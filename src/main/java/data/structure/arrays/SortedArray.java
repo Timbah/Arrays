@@ -31,4 +31,20 @@ public class SortedArray {
 
     }
 
+    public static void reverse(int[] inputArray){
+
+        int tail = inputArray.length-1;
+        int temp = 0;
+
+        for(int i = 0; i < inputArray.length / 2; i++){
+            temp = inputArray[i];
+            inputArray[i] = inputArray[tail];
+            inputArray[tail] = temp;
+
+            tail--;
+        }
+
+    }
+
+
 }
