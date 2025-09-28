@@ -1,6 +1,5 @@
 package Minimum.Element.Challenge;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MinimumElement {
@@ -24,9 +23,13 @@ public class MinimumElement {
 
     public static int findMin(int[] arrayInput) {
 
-        Arrays.sort(arrayInput);
+        int min = arrayInput[0];
 
-        return arrayInput[0];
+        for(int element : arrayInput){
+            min = element < min ? element : min;
+        }
+
+        return min;
     }
 
 }
