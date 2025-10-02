@@ -4,46 +4,64 @@ import java.util.*;
 
 public class Main {
 
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
 
-        String promptMessage = """
-                 0 - To Shutdown.
-                 1 - To Add item(s) to a list(Comma delimited list)
-                 2 - To Remove any item(s) from the list (Comma delimited list)          \s
-                 Enter an option:
-                \s""";
-        System.out.println(promptMessage);
-        Scanner scanner = new Scanner(System.in);
+        boolean flag = true;
+        ArrayList<String> groceries = new ArrayList<>();
 
-        int option = scanner.nextInt();
-        scanner.nextLine();
+        while (flag) {
+            printActions();
 
-        if (option < 0 || option > 2) {
-            System.out.println("You have entered an unknown option. System will exit");
-        } else {
-
-            ArrayList<String> groceryList = new ArrayList<>();
-            groceryList.addAll(List.of("Avocado,milk,sugar"));
-
-            System.out.println("Initial list: "+ groceryList.toString());
-            String input = scanner.nextLine();
-            String[] items = input.split(",");
-
-            switch (option) {
-                case 1:
-                    groceryList.addAll(List.of(items));
-                    break;
-                case 2:
-                    groceryList.removeAll(List.of(items));
-                    break;
-                default:
-                    break;
+            switch (Integer.parseInt(scanner.nextLine())) {
+                case 1 -> addItems(groceries);
+                case 2 -> removeItems(groceries);
+                default -> flag = false;
             }
 
-            groceryList.sort(Comparator.naturalOrder());
-            System.out.println(groceryList.toString());
+            groceries.sort(Comparator.naturalOrder());
+            System.out.println(groceries);
         }
 
+    }
+
+    private static void removeItems(ArrayList<String> groceriesInput) {
+
+        System.out.println("Remove item(s) [Separate items by a comma]:");
+        String[] items = scanner.nextLine().split(",");
+
+        for (String i : items) {
+            String trimmed = i.trim();
+            groceriesInput.remove(trimmed);
+        }
 
     }
+
+
+    private static void addItems(ArrayList<String> groceriesInput) {
+
+        System.out.println("Add item(s) [Separate items by a comma]:");
+        String[] items = scanner.nextLine().split(",");
+
+        for (String i : items) {
+            String trimmed = i.trim();
+
+            if (!groceriesInput.contains(trimmed)) {
+                groceriesInput.add(trimmed);
+            }
+        }
+
+    }
+
+    private static void printActions() {
+
+        String promptMessage = """
+                0 - To Shutdown.
+                1 - To Add item(s) to a list(Comma delimited list)
+                2 - To Remove any item(s) from the list (Comma delimited list)
+                Enter an option:""";
+        System.out.println(promptMessage + " ");
+    }
+
 }
