@@ -18,7 +18,7 @@ public class Main {
         addTown("Perth", 3923);
 
         ListIterator<Town> iterator = townList.listIterator();
-//        System.out.println(iterator.next().getName());
+
         boolean canContinue = true;
 
         while (canContinue) {
