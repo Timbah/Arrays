@@ -1,6 +1,7 @@
 package LinkedList;
 
 public class Town {
+//Could have made it a record LOL
 
     private String name;
     private double distanceFromStart;

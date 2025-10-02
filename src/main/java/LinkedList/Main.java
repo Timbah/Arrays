@@ -32,7 +32,7 @@ public class Main {
 
         Town temp;
         menuAction = menuAction.substring(0, 1);
-
+//saving
         if (menuAction.equalsIgnoreCase("F") && iterator2.hasNext()) {
             temp = (Town) iterator2.next();
             System.out.println("Next Town is: " + temp.getName() + " ---> " + temp.getDistanceFromStart());
